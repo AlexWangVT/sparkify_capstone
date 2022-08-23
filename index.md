@@ -106,7 +106,7 @@ Random forest, although performing well in accuracy, also has some overfitting i
 
 ***The Multilayer Perceptron Layer (MPL) Classifier***
 
-![Figure 17](MPL.png)<p align = "center">
+![Figure 17](MPL.png)
 
 Again, MPL also has overfitting problem by having much lower testing performance. It should be noted that 'MultilayerPerceptronClassificationModel' object has no attribute 'featureImportances', so we cannot investigate the feature importance for this model. 
 
