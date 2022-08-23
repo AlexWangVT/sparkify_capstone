@@ -55,5 +55,8 @@ This command will:
 You can also uncomment the main function in the churn_prediction_modeling.py file and run the script file using the command:
 <span style="color:blue">some *blue* python churn_prediction_modeling.py)</span>
 
+## Metrics
+The metrics we are using here include accuracy, precision, recall, and F-measure.
+
 ## Model details
 Please refer to [This medium post](https://alexwangvt.github.io/sparkify_capstone/).
