@@ -1,4 +1,3 @@
-*.json
-*.csv
 models/
 data/
+medium-sparkify-event-data.json
