@@ -535,20 +535,20 @@ def apply_model(train, test, feature_labels, model_type, parameter_grid=None, sa
 
 
 
-
-if __name__ == "__main__":
-    # the path of the raw data
-    data_path = 'medium-sparkify-event-data.json'
-    # save the process data to 'save_data_as'
-    save_data_as = 'data/churn_model_data.csv'
-    # models to be trained in this project
-    model_types = ['LogisticRegression', 'DecisionTreeClassifier', 'GBTClassifier', 'RandomForestClassifier', 'MultilayerPerceptronClassifier']
-    # data pipeline
-    load_clean_transfer(data_path, save_data_as)
-    # machine learning pipeline
-    train, test, feature_labels = load_transform_ml_data(save_data_as)
-    for model_type in model_types:
-        apply_model(train, test, feature_labels, model_type, parameter_grid=None, save_model = None, load_from_existing = None)
+# This main function is only used when we run the script using "python churn_prediction_modeling.py" in terminal
+# if __name__ == "__main__":
+#     # the path of the raw data
+#     data_path = 'medium-sparkify-event-data.json'
+#     # save the process data to 'save_data_as'
+#     save_data_as = 'data/churn_model_data.csv'
+#     # models to be trained in this project
+#     model_types = ['LogisticRegression', 'DecisionTreeClassifier', 'GBTClassifier', 'RandomForestClassifier', 'MultilayerPerceptronClassifier']
+#     # data pipeline
+#     load_clean_transfer(data_path, save_data_as)
+#     # machine learning pipeline
+#     train, test, feature_labels = load_transform_ml_data(save_data_as)
+#     for model_type in model_types:
+#         apply_model(train, test, feature_labels, model_type, parameter_grid=None, save_model = None, load_from_existing = None)
 
 
 
