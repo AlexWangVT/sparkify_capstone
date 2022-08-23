@@ -1,4 +1,4 @@
-# Sparkify_Udacity data science capstone project
+
 ## Project Overview
 This is the final project of the data science nanodegree (DSND). We have an example of a virtual company called 'Sparkify' who offers paid and free listening service, the customers can switch between either service, and they can cancel their subscription at any time. The given customers dataset is medium size (242M), thus the standard tools for analysis and machine learning will be useful here. For faster processing, we use Big Data tools like Apache Spark which is one of the fastest big data tools.
 
