@@ -5,18 +5,18 @@
 ## Introduction
 Many companies have switched their business model from a one-time fee to a monthly or annual subscription. The customers have the right to cancel their subscription at any time, or, in some cases, downgrade to the free subscription model. It is very important for companies to keep their customers at the paid level if they want to maintain or improve their profits.
 
-![Figure1](company bill.png)<p align = "center">
+![Figure1](company bill.png)
 
 Customers who leave away from a service usually have some features. These features are indicators that the company will lose this customer soon! So companies should figure out what features might trigger customers' leave, predict the turnover decision, contact customers to offer some discounts or incentives to keep them. 
 
 The loss of customers is called ‘customer churn’ while keeping the customers and avoiding their leave is called ‘customer retention’.
 
-![Figure 2](fig2.png)<p align = "center">
+![Figure 2](fig2.png)
 
 ## Use machine learning to detect customer churn
 We have an example of a virtual company called ‘Sparkify’ who offers paid and free listening service, the customers can switch between either service, and they can cancel their subscription at any time.
 
-![Figure 3](spark.png)<p align = "center">
+![Figure 3](spark.png)
 
 The given customers dataset is medium size having 242MB, thus the standard tools for analysis and machine learning will  be useful here. We perform analys using Big Data tools like Apache Spark which is one of the fastest big data tools.
 
@@ -30,34 +30,34 @@ The given dataset contains 18 fields, the fields include usedId, sessionID, subs
 ***Data exploring***
 First, let’s see the number of churn users.
 
-![Figure 4](num_churns.png)<p align = "center">
+![Figure 4](num_churns.png)
 
 From the figure above, we see a huge number of cancelation, about 25% of the users canceled!
 
 Then, explore the churn users by gender or by subscription.
 
-![Figure 5](category.png)<p align = "center">
+![Figure 5](category.png)
 We see that more male users cancelled than females. Gender may affect churn.
 
-![Figure 18](level.png)<p align = "center">
+![Figure 18](level.png)
 
 Free users cancelled the service slightly more than paid users. Level may impact less than gender on churn.
 
 Next, let’s see when the churn users are most active.
 
-![Figure 6](day.png)<p align = "center">
+![Figure 6](day.png)
 
 The churn users are most active at the beginning of the month. Thus, most cancellation happens at the end of the month, which is logical to avoid renewal fees.
 
 Another question: does the users’ operating system affect their activity?
 
-![Figure 7](sys.png)<p align = "center">
+![Figure 7](sys.png)
 
 It seems that Mac users are more willing to be active than Windows users, but the impact is not significant visually.
 
 Then, does state of an user affect their decisions?
 
-![Figure 8](state.png)<p align = "center">
+![Figure 8](state.png)
 
 Obviously, user in some of the states are more likely to churn than others.
 
@@ -73,40 +73,40 @@ We have tested 5 machine learning models for classification to see which has the
 
 ***The logistic regression model***
 
-![Figure 9](LR_table.png)<p align = "center">
+![Figure 9](LR_table.png)
 
-![Figure 10](LR_fig.png)<p align = "center">
+![Figure 10](LR_fig.png)
 
 As we see in the table above, the accuracy of the logistic regression model is relatively good, 85.8% and 84.2% for the training and the testing datasets. Other measures like precision, recall, and F-score are close to the accuracy values. This shows good performance of the model to detect churn customers. The attached chart shows the weight of each feature; for example, the downgrade, roll_advert, and mean session duration are the three features most likely to make customers leave. Interesting, submit_downgrade does not necessarily mean the leave of a customer. 
 
 ***The decision tree model***
 
-![Figure 11](DT_table.png)<p align = "center">
+![Figure 11](DT_table.png)
 
-![Figure 12](DT_fig.png)<p align = "center">
+![Figure 12](DT_fig.png)
 
 As we can see, decision tree performs much better than logistic regression by having the accuracy of 98.6% and 94.3% for training and testing. Other metrics such as precision, recall and F-measure are also better than logistic regression. The bar chart demonstrates that subscription age is the most significant indicator of customer churn followed by downgrade and logout, which is differen from what we get by logistic regression. 
 
 ***The Gradient-Boosted Trees (GBTs) model***
 
-![Figure 13](GB_table.png)<p align = "center">
+![Figure 13](GB_table.png)
 
-![Figure 14](GB_fig.png)<p align = "center">
+![Figure 14](GB_fig.png)
 
 This model, has higher accuracy for traning but lower for testing compared to decision tree, but the testing performance is still good in terms of accuracy. However, for F-measure, precision, recall, the testing performance is much lower than training, generating some overfitting problem. 
 
 
 ***The Random Forest model***
 
-![Figure 15](RF_table.png)<p align = "center">
+![Figure 15](RF_table.png)
 
-![Figure 16](RF_fig.png)<p align = "center">
+![Figure 16](RF_fig.png)
 
 Random forest, although performing well in accuracy, also has some overfitting issue in terms of recall and F-measure. Like the other classifiers, subscription age and downgrade are the two most significant factors that make customers churn. 
 
 ***The Multilayer Perceptron Layer (MPL) Classifier***
 
-![Figure 17](multilayer.png)<p align = "center">
+![Figure 17](multilayer.png)
 
 Again, MPL also has overfitting problem by having much lower testing performance. It should be noted that 'MultilayerPerceptronClassificationModel' object has no attribute 'featureImportances', so we cannot investigate the feature importance for this model. 
 
